@@ -4,42 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лабораторна робота 1</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Загальні стилі */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #0056b3;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Стилі для header */
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        /* Стилі для основного вмісту */
+        main {
+            display: flex;
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .content {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
+
+        /* Стилі для бокової панелі */
+        .sidebar {
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 40%;
+        }
+
+        /* Таблиця погоди */
+        .weather-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .weather-table th, 
+        .weather-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .weather-table th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .weather-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .weather-table tr:hover {
+            background-color: #ddd;
+        }
+
+        /* Форма пошуку */
+        #search-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #search-form label {
+            font-weight: bold;
+        }
+
+        #search-form input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        #search-form button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        #search-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Стилі для футера */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 style="text-align: center; color: #0056b3;">Хімічні Реакції</h1>
+        <h1>Хімічні Реакції</h1>
     </header>
-    <main style="display: flex; gap: 20px; margin: 20px auto; max-width: 1200px;">
-        <section class="content" style="width: 50%; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
-            <article>
-                <h2 style="font-size: 1.5em; color: #333;">Оформлений текст</h2>
-                <p style="font-style: italic; line-height: 1.8;">
-                    Хімічна реакція ортофосфорної кислоти: 
-                    <strong style="color: #0056b3;">P<sub>2</sub>O<sub>5</sub> + 3H<sub>2</sub>O → H<sub>3</sub>PO<sub>4</sub></strong>
-                </p>
-            </article>
-            <article>
-                <h2 style="text-decoration: underline;">Список спеціальностей</h2>
-                <ul style="padding-left: 20px; list-style-type: square;">
-                    <li style="color: #007bff;">КІ</li>
-                    <li style="color: #007bff;">КН</li>
-                    <li style="color: #007bff;">КБІКС</li>
-                </ul>
-            </article>
+    <main>
+        <section class="content">
+            <h2>Оформлений текст</h2>
+            <p>
+                Хімічна реакція ортофосфорної кислоти: 
+                <strong>P<sub>2</sub>O<sub>5</sub> + 3H<sub>2</sub>O → H<sub>3</sub>PO<sub>4</sub></strong>
+            </p>
         </section>
-        <aside class="sidebar" style="width: 40%; background-color: #f1f1f1; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
-            <h2 style="color: #0056b3;">Форма пошуку</h2>
-            <form action="#" id="search-form" style="display: flex; flex-direction: column; gap: 10px;">
-                <label for="search" style="font-weight: bold;">Пошук:</label>
-                <input type="text" id="search" name="search" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
-                <button type="submit" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Пошук</button>
+
+        <aside class="sidebar">
+            <h2>Форма пошуку</h2>
+            <form action="#" id="search-form">
+                <label for="search">Пошук:</label>
+                <input type="text" id="search" name="search">
+                <button type="submit">Пошук</button>
             </form>
         </aside>
     </main>
-    <footer style="background-color: #333; color: white; text-align: center; padding: 10px;">
-        <p>&copy; 2024 Лабораторна робота 1</p>
+
+    <footer>
+        <p>&copy; 2024 Лабораторна робота 2</p>
     </footer>
 </body>
 </html>
-
